@@ -1,0 +1,8 @@
+# created by virtualenv automatically
+*.zip
+Lib/
+.venv/
+venv/
+Scripts/
+.idea/
+

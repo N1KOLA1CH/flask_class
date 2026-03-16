@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Список профессий</h1>
+{% if lst == 'ul'%}
+    <ul>
+        {% for user in professions %}
+        <li>{{ user }}</li>
+        {% endfor %}
+    </ul>
+{% elif lst == 'ol'%}
+    <ol>
+        {% for user in professions %}
+        <li>{{ user }}</li>
+        {% endfor %}
+    </ol>
+{% else %}
+        <div class="alert alert-primary" role="alert">
+                        Cообщение о неверном параметре
+                    </div>
+
+{% endif %}
+{% endblock %}
