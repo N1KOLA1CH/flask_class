@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect
 from sqlalchemy.orm.collections import collection
 
+
 from data import db_session
 from data.jobs import Jobs
 from data.news import News
@@ -58,6 +59,7 @@ def init_data_users():
     session.add(user2)
     session.add(user3)
     session.commit()
+
 
 
 def init_data_jobs():
