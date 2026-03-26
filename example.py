@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect
 from data import db_session
 from data.db_session import global_init, create_session
 from data.jobs import Jobs
-from data.news import News
+from data.user import User
 from data.users import User
 from forms.user import RegisterForm
 

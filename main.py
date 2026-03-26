@@ -1,15 +1,23 @@
 from flask import Flask, render_template, redirect, make_response, jsonify
+from flask_restful import Api
 from sqlalchemy.orm.collections import collection
 
 
-from data import db_session, jobs_api
+from data import db_session, jobs_api, users_resources
 from data.jobs import Jobs
-from data.news import News
+from data.user import User
 from data.users import User
 from forms.loginform import RegisterForm
+from forms.regform import RegisterForm
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
+api = Api(app)
+api.add_resource(users_resources.UsersListResource, '/api/v2/users')
+
+# для одного объекта
+api.add_resource(users_resources.UsersResource, '/api/v2/users/<int:user_id>')
 
 @app.errorhandler(404)
 def not_found(error):
